@@ -1,6 +1,6 @@
 {
   "name": "nestjs-commander",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
@@ -12,7 +12,9 @@
     "@nestjs/core": "^6.0.0"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "index.js",
+    "index.d.ts"
   ],
   "devDependencies": {
     "@nestjs/common": "^6.0.0",
