@@ -1,8 +1,8 @@
-import { DynamicModule, Module, Type } from "@nestjs/common";
-import { ExecutorService } from "./executor.service";
-import { OutputService } from "./output.service";
-import { AbstractCommand } from "./AbstractCommand";
-import { REGISTER_COMMAND } from "./constants";
+import {DynamicModule, Module, Type} from "@nestjs/common";
+import {ExecutorService} from "./executor.service";
+import {OutputService} from "./output.service";
+import {AbstractCommand} from "./AbstractCommand";
+import {REGISTER_COMMAND} from "./constants";
 
 @Module({})
 export class CommanderModule {
@@ -18,8 +18,9 @@ export const createCommanderModule = (rootModule: any, commands: Array<Type<Abst
                 provide: ExecutorService,
                 useFactory: (outputService: OutputService, ...commandInjections: Array<AbstractCommand<any>>) => {
                     const executor = new ExecutorService(outputService);
-                    for (const command of commandInjections)
-                        executor.registerCommand(command)
+                    for (const command of commandInjections) {
+                        executor.registerCommand(command);
+                    }
                     return executor;
                 },
                 inject: [OutputService, ...commands],

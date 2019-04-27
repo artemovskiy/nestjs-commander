@@ -1,8 +1,8 @@
-import {Inject, Injectable} from "@nestjs/common"
+import {Inject, Injectable} from "@nestjs/common";
 import * as commander from "commander";
-import { CommanderStatic } from "commander";
-import { AbstractCommand } from "./AbstractCommand";
-import { OutputService } from "./output.service";
+import {CommanderStatic} from "commander";
+import {AbstractCommand} from "./AbstractCommand";
+import {OutputService} from "./output.service";
 
 @Injectable()
 export class ExecutorService {
@@ -26,7 +26,7 @@ export class ExecutorService {
             c.option(command.getOptionFlags(key), o.description, o.defaultValue);
         }
         c.action((cmd) => {
-            command.init({ output: this.output, input: null });
+            command.init({output: this.output, input: null});
             command.useInput(cmd);
             command.fire();
         });

@@ -25,10 +25,12 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.4.0",
     "ts-jest": "^23.6.0",
+    "tslint": "^5.16.0",
     "typescript": "^3.4.1"
   },
   "scripts": {
     "build": "rm -rf ./dist && tsc && yarn run build:index",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "build:index": "rm -rf ./index.js ./index.d.ts && tsc -d --skipLibCheck ./index.ts",
     "test": "jest",
     "coverage": "jest --coverage"

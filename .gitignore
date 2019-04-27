@@ -4,5 +4,5 @@ node_modules
 yarn-error.log
 yarn.lock
 .idea
-./index.js
-./index.d.ts
+index.js
+index.d.ts
